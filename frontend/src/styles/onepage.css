@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --primary: #1D9E75;
   --secondary: #D85A30;
   --accent: #FF6B9D;
@@ -47,18 +47,35 @@
   position: sticky; top: 0; z-index: 1000;
   animation: fadeInDown 0.8s ease-out;
 }
-.op-header-content { display: flex; justify-content: space-between; align-items: center; }
+.op-header-content { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .op-logo {
   display: inline-flex; align-items: center; text-decoration: none;
 }
 .op-logo-img {
-  height: 50px; width: auto; display: block;
-  background: #fff; padding: 6px 14px; border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  height: 68px; width: auto; display: block;
   transition: transform 0.3s;
 }
 .op-logo-img:hover { transform: translateY(-2px) scale(1.03); }
-@media (max-width: 768px) { .op-logo-img { height: 40px; padding: 5px 10px; } }
+@media (max-width: 768px) { .op-logo-img { height: 50px; } }
+
+.op-header-right { display: flex; align-items: center; gap: 1.8rem; }
+
+/* Language switcher */
+.op-lang { display: flex; gap: 6px; }
+.op-lang button {
+  background: var(--glass); backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border); color: rgba(255,255,255,0.8);
+  padding: 6px 12px; border-radius: 50px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+  cursor: pointer; transition: all 0.3s;
+}
+.op-lang button:hover { color: #fff; border-color: var(--accent); transform: translateY(-1px); }
+.op-lang button.active {
+  background: linear-gradient(135deg, var(--accent), var(--blue));
+  color: #fff; border-color: transparent;
+}
+@media (max-width: 480px) { .op-lang button { padding: 5px 9px; font-size: 11px; } }
+
 .op-nav { display: none; }
 @media (min-width: 768px) {
   .op-nav { display: flex; gap: 2.5rem; }
@@ -242,13 +259,10 @@
 
 /* FOOTER */
 .op-footer { background: var(--dark); color: white; padding: 50px 20px; text-align: center; border-top: 1px solid var(--glass-border); }
-.op-footer-logo { margin-bottom: 16px; }
+.op-footer-logo { margin-bottom: 18px; }
 .op-footer-logo-img {
-  height: 70px; width: auto; display: inline-block;
-  background: #fff; padding: 10px 18px; border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  height: 92px; width: auto; display: inline-block;
 }
-.op-footer-tagline { font-size: 14px; letter-spacing: 1px; opacity: 0.95 !important; margin-bottom: 14px !important; font-weight: 500; }
 .op-footer p { font-size: 13px; opacity: 0.7; margin: 4px 0; }
 
 @media (max-width: 768px) {
