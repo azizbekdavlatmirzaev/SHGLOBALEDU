@@ -187,9 +187,9 @@ function OnePageLanding() {
     document.getElementById("form-section").scrollIntoView({ behavior: "smooth" });
   };
 
-  // Countdown timer — deadline: 15-iyul 2026
+  // Countdown timer — deadline: 30-iyun 2026
   useEffect(() => {
-    const deadline = new Date("2026-07-15T23:59:59");
+    const deadline = new Date("2026-06-30T23:59:59");
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
