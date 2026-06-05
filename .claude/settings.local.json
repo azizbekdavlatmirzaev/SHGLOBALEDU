@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(docker compose logs frontend --tail 15)",
+      "PowerShell(docker compose up -d --force-recreate frontend)"
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+# ============================================
+# KOREA EDUCATION PLATFORM - DOCKER COMPOSE
+# ============================================
+
+version: '3.8'
+
+services:
+  # ============================================
+  # POSTGRESQL DATABASE
+  # ============================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: korea_education_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: korea_education
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - korea_network
+
+  # ============================================
+  # BACKEND API SERVER
+  # ============================================
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: korea_education_backend
+    ports:
+      - "3001:3001"
+    environment:
+      DB_USER: postgres
+      DB_PASSWORD: password123
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: korea_education
+      PORT: 3001
+      NODE_ENV: production
+      JWT_SECRET: your-super-secret-jwt-key-change-this-in-production
+      CORS_ORIGIN: http://localhost:3000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    networks:
+      - korea_network
+    restart: unless-stopped
+
+  # ============================================
+  # FRONTEND REACT APP
+  # ============================================
+  frontend:
+    image: node:18-alpine
+    container_name: korea_education_frontend
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      REACT_APP_API_URL: http://localhost:3001
+      CI: false
+      CHOKIDAR_USEPOLLING: "true"
+      WATCHPACK_POLLING: "true"
+      FAST_REFRESH: "true"
+    command: sh -c "npm install && npm start"
+    depends_on:
+      - backend
+    networks:
+      - korea_network
+    restart: unless-stopped
+
+# ============================================
+# VOLUMES & NETWORKS
+# ============================================
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  korea_network:
+    driver: bridge
+
+# ============================================
+# NOTES
+# ============================================
+# 
+# Services:
+#   - PostgreSQL: postgres:5432 (internal), localhost:5432 (external)
+#   - Backend: http://localhost:3001
+#   - Frontend: http://localhost:3000
+#
+# Start:     docker-compose up
+# Stop:      docker-compose down
+# Logs:      docker-compose logs -f
+# Rebuild:   docker-compose up --build
+#
+# ============================================
