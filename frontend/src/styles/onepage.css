@@ -52,11 +52,11 @@
   display: inline-flex; align-items: center; text-decoration: none;
 }
 .op-logo-img {
-  height: 68px; width: auto; display: block;
+  height: 80px; width: auto; display: block;
   transition: transform 0.3s;
 }
 .op-logo-img:hover { transform: translateY(-2px) scale(1.03); }
-@media (max-width: 768px) { .op-logo-img { height: 50px; } }
+@media (max-width: 768px) { .op-logo-img { height: 60px; } }
 
 .op-header-right { display: flex; align-items: center; gap: 1.8rem; }
 
@@ -261,7 +261,7 @@
 .op-footer { background: var(--dark); color: white; padding: 50px 20px; text-align: center; border-top: 1px solid var(--glass-border); }
 .op-footer-logo { margin-bottom: 18px; }
 .op-footer-logo-img {
-  height: 92px; width: auto; display: inline-block;
+  height: 140px; width: auto; display: inline-block;
 }
 .op-footer p { font-size: 13px; opacity: 0.7; margin: 4px 0; }
 

@@ -1,36 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 150" width="460" height="150" font-family="'Poppins','Segoe UI',sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 410" width="600" height="410" font-family="'Poppins','Segoe UI',sans-serif">
   <defs>
-    <linearGradient id="swooshL" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0%" stop-color="#5aa9ff"/>
-      <stop offset="45%" stop-color="#29c0c8"/>
-      <stop offset="75%" stop-color="#2fd0bf"/>
+    <linearGradient id="swL" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4aa3ff"/>
+      <stop offset="40%" stop-color="#22b6c2"/>
+      <stop offset="70%" stop-color="#2bcf86"/>
       <stop offset="100%" stop-color="#34d27e"/>
     </linearGradient>
-    <linearGradient id="swooshL2" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0%" stop-color="#29c0c8"/>
+    <linearGradient id="swL2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22b6c2"/>
       <stop offset="100%" stop-color="#34d27e"/>
     </linearGradient>
   </defs>
 
-  <!-- Swoosh arc around SH -->
-  <path d="M28 118 C 40 150, 150 150, 185 92 C 205 60, 215 38, 250 30 C 215 44, 205 70, 188 98 C 150 138, 55 138, 36 112 Z"
-        fill="url(#swooshL)"/>
-  <path d="M250 30 C 282 22, 300 40, 300 68 C 300 44, 282 34, 252 42 Z"
-        fill="url(#swooshL2)"/>
+  <!-- Main swoosh ribbon -->
+  <path d="M60 300 C 110 348, 340 356, 450 268 C 512 218, 520 150, 472 102 C 506 150, 496 210, 440 252 C 332 330, 120 330, 66 292 Z" fill="url(#swL)"/>
+  <!-- Small accent swoosh tail -->
+  <path d="M472 102 C 512 74, 548 96, 542 142 C 534 110, 504 98, 474 114 Z" fill="url(#swL2)"/>
 
-  <!-- Dotted globe accent -->
-  <g fill="#cfe0f5" opacity="0.7">
-    <circle cx="232" cy="40" r="2"/><circle cx="240" cy="38" r="2"/><circle cx="248" cy="40" r="2"/>
-    <circle cx="236" cy="46" r="2"/><circle cx="244" cy="46" r="2"/><circle cx="252" cy="48" r="2"/>
-    <circle cx="240" cy="54" r="2"/><circle cx="248" cy="54" r="2"/><circle cx="256" cy="42" r="2"/>
+  <!-- Dotted globe -->
+  <g fill="#d7e3f6" opacity="0.9">
+    <circle cx="455" cy="118" r="2.4"/>
+    <circle cx="427" cy="132" r="2.4"/><circle cx="441" cy="132" r="2.4"/><circle cx="455" cy="132" r="2.4"/><circle cx="469" cy="132" r="2.4"/><circle cx="483" cy="132" r="2.4"/>
+    <circle cx="427" cy="146" r="2.4"/><circle cx="441" cy="146" r="2.4"/><circle cx="455" cy="146" r="2.4"/><circle cx="469" cy="146" r="2.4"/><circle cx="483" cy="146" r="2.4"/>
+    <circle cx="413" cy="160" r="2.4"/><circle cx="427" cy="160" r="2.4"/><circle cx="441" cy="160" r="2.4"/><circle cx="455" cy="160" r="2.4"/><circle cx="469" cy="160" r="2.4"/><circle cx="483" cy="160" r="2.4"/><circle cx="497" cy="160" r="2.4"/>
+    <circle cx="427" cy="174" r="2.4"/><circle cx="441" cy="174" r="2.4"/><circle cx="455" cy="174" r="2.4"/><circle cx="469" cy="174" r="2.4"/><circle cx="483" cy="174" r="2.4"/>
+    <circle cx="427" cy="188" r="2.4"/><circle cx="441" cy="188" r="2.4"/><circle cx="455" cy="188" r="2.4"/><circle cx="469" cy="188" r="2.4"/><circle cx="483" cy="188" r="2.4"/>
+    <circle cx="455" cy="202" r="2.4"/>
   </g>
 
   <!-- SH monogram -->
-  <text x="40" y="92" font-size="86" font-weight="700" fill="#ffffff" font-family="Georgia,'Times New Roman',serif">SH</text>
+  <text x="150" y="258" font-size="210" font-weight="700" fill="#ffffff" font-family="Georgia,'Times New Roman',serif">SH</text>
 
   <!-- Brand name -->
-  <text x="40" y="126" font-size="30" font-weight="700" fill="#ffffff" letter-spacing="1">SH Global <tspan fill="#34d27e">EDU</tspan></text>
+  <text x="300" y="338" text-anchor="middle" font-size="74" font-weight="700" fill="#ffffff" letter-spacing="1">Global <tspan fill="#34d27e">EDU</tspan></text>
 
-  <!-- Tagline -->
-  <text x="42" y="146" font-size="12.5" font-weight="500" fill="#aab8cc" letter-spacing="2">Connect · Educate · Empower</text>
+  <!-- Tagline with side lines -->
+  <line x1="120" y1="378" x2="182" y2="378" stroke="#6b7a90" stroke-width="2"/>
+  <line x1="418" y1="378" x2="480" y2="378" stroke="#6b7a90" stroke-width="2"/>
+  <text x="300" y="384" text-anchor="middle" font-size="23" font-weight="500" fill="#b9c6d8" letter-spacing="1.5">Connect · Educate · Empower</text>
 </svg>
